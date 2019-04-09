@@ -3,14 +3,14 @@ This is my golang logger pkg.
 
 ## Setup
 ```bash
-go get github/sdn0303/golog
+go get github.com/sdn0303/golog
 ```
 
 ## Usage
 ```go
 package main
 
-import "github/sdn0303/golog"
+import "github.com/sdn0303/golog"
 
 var gl *golog.Logger
 
