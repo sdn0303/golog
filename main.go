@@ -9,7 +9,7 @@ import (
 
 // Logger struct of logger
 type Logger struct {
-	Logging *zap.Logger
+	*zap.Logger
 }
 
 var (
@@ -25,12 +25,12 @@ func logger() *zap.Logger {
 		Level:    level,
 		Encoding: "json",
 		EncoderConfig: zapcore.EncoderConfig{
-			TimeKey:        "Time",
-			LevelKey:       "Level",
-			NameKey:        "Name",
-			CallerKey:      "Caller",
-			MessageKey:     "Msg",
-			StacktraceKey:  "St",
+			TimeKey:        "time",
+			LevelKey:       "level",
+			NameKey:        "name",
+			CallerKey:      "caller",
+			MessageKey:     "msg",
+			StacktraceKey:  "stacktrace",
 			EncodeLevel:    zapcore.CapitalLevelEncoder,
 			EncodeTime:     zapcore.ISO8601TimeEncoder,
 			EncodeDuration: zapcore.StringDurationEncoder,
@@ -49,9 +49,7 @@ func logger() *zap.Logger {
 
 //　initializeLogger initialize Logger struct
 func initializeLogger() {
-	loggerInstance = &Logger{
-		Logging: logger(),
-	}
+	loggerInstance = &Logger{logger()}
 }
 
 // GetInstance create & return loggerInstance
