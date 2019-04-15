@@ -12,13 +12,13 @@ package main
 
 import "github.com/sdn0303/golog"
 
-var gl *golog.Logger
+var golg *golog.Logger
 
 func init() {
-	gl = golog.GetInstance()
+	golg = golog.GetInstance()
 }
 
 func main()  {
-	gl.Logging.Info("Hello World")
+	golg.Info("Hello World")
 }
 ```
